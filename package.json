@@ -1,0 +1,37 @@
+{
+  "name": "remark-editor",
+  "version": "0.1.0",
+  "description": "",
+  "main": ".tmp/main/main.js",
+  "scripts": {
+    "package-darwin": "electron-packager --platform=darwin --arch=all --prune --asar=true --out=releases .",
+    "package-win32": "electron-packager --platform=win32 --arch=all --prune --asar=true --out=releases .",
+    "package-linux": "electron-packager --platform=linux --arch=all --prune --asar=true --out=releases .",
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yasumichi/remark-editor.git"
+  },
+  "keywords": [
+    "Markdown",
+    "Presentation"
+  ],
+  "author": "",
+  "license": "",
+  "homepage": "",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "electron-packager": "^7.6.0",
+    "electron-prebuilt": "^1.3.3"
+  },
+  "dependencies": {
+    "ace-min-noconflict": "^1.1.9",
+    "codemirror": "^5.25.2",
+    "codemirror-textlint": "^1.1.0",
+    "remark-gemoji": "^3.0.0",
+    "textlint-rule-no-todo": "^2.0.0"
+  }
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="photon/css/photon.min.css">
+  <link rel="stylesheet" href="node_modules/codemirror/lib/codemirror.css">
+  <link rel="stylesheet" href="node_modules/codemirror/addon/lint/lint.css">
+  <link rel="stylesheet" type="text/css" href="editor.css">
+  <link rel="stylesheet" type="text/css" href="node_modules/codemirror/theme/base16-light.css"
+  >
+  <link rel="stylesheet" type="text/css" href="emojify.css">
+  <title>Electron</title>
+</head>
+<body>
+  <div class="window">
+    <div class="window-content">
+      <div class="pane-group">
+     <!--    <text id="editor" class="pane"></div> -->
+        <div id="editorpane" class="pane">
+          <textarea id="editor" ></textarea>
+        </div>
+        <webview id="webview" class="pane" src="slideview.html" preload=".tmp/renderer/webview.js"></webview>
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript" src=".tmp/renderer/mainwindow.js"></script>
+</body>
+</html>
