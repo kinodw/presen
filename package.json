@@ -11,17 +11,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "./node_modules/.bin/babel --watch --out-dir .tmp src"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/yasumichi/remark-editor.git"
-  },
-  "keywords": [
-    "Markdown",
-    "Presentation"
-  ],
   "author": "",
   "license": "",
-  "homepage": "",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-preset-es2015": "^6.24.1",
@@ -29,10 +20,14 @@
     "electron-prebuilt": "^1.3.3"
   },
   "dependencies": {
-    "ace-min-noconflict": "^1.1.9",
     "codemirror": "^5.25.2",
     "codemirror-textlint": "^1.1.0",
-    "remark-gemoji": "^3.0.0",
-    "textlint-rule-no-todo": "^2.0.0"
+    "remark-emoji": "^2.0.0",
+    "textlint-rule-max-ten": "^2.0.3",
+    "textlint-rule-no-doubled-conjunctive-particle-ga": "^1.0.2",
+    "textlint-rule-no-doubled-joshi": "^3.5.1",
+    "textlint-rule-no-dropping-the-ra": "^1.1.2",
+    "textlint-rule-no-todo": "^2.0.0",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0"
   }
 }
