@@ -8,7 +8,8 @@
     "package-win32": "electron-packager --platform=win32 --arch=all --prune --asar=true --out=releases .",
     "package-linux": "electron-packager --platform=linux --arch=all --prune --asar=true --out=releases .",
     "start": "electron .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "./node_modules/.bin/babel --watch --out-dir .tmp src"
   },
   "repository": {
     "type": "git",
