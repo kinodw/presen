@@ -8,7 +8,12 @@
   <link rel="stylesheet" type="text/css" href="editor.css">
   <link rel="stylesheet" type="text/css" href="node_modules/codemirror/theme/base16-light.css"
   >
+  <link rel="stylesheet" type="text/css" href="slidePage.css">
   <link rel="stylesheet" type="text/css" href="emojify.css">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
   <title>Electron</title>
 </head>
 <body>
@@ -19,7 +24,9 @@
         <div id="editorpane" class="pane">
           <textarea id="editor" ></textarea>
         </div>
-        <webview id="webview" class="pane" src="slideview.html" preload=".tmp/renderer/webview.js"></webview>
+       <div id="previewpane" class="pane">
+          <div class="container" ></div>
+       </div>
       </div>
     </div>
   </div>

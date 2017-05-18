@@ -16,7 +16,7 @@ var MainWindow = function () {
 
         _classCallCheck(this, MainWindow);
 
-        this.window = new _electron.BrowserWindow({ width: 800, height: 600 });
+        this.window = new _electron.BrowserWindow({ width: 1000, height: 600 });
         this.window.loadURL("file://" + __dirname + "/../../mainwindow.html");
         this.window.on("closed", function () {
             _this.window = null;
