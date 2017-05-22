@@ -2,13 +2,6 @@ import { ipcRenderer } from "electron";
 import slide from "./.tmp/renderer/slide";
 import createEditor from "./.tmp/renderer/createEditor";
 
-// markdown parser initialization
-// page parser  =>  "---"
-let md = require("markdown-it")();
-md.renderer.rules.hr = (token, idx) => {
-    return ('</div><div class="slidePage">');
-};
-
 // Editor initialization
 let editor = createEditor();
 
@@ -22,11 +15,19 @@ ipcRenderer.on("SEND_TEXT", (_e, text) => {
     editor.setValue(text);
 });
 
-let container = document.querySelector(".container");
 
-// エディターが更新されたらプレビュー更新
+
+
+
+var webview = document.getElementById('preview');
+if (process.env.DEBUG_GUEST) {
+  webview.addEventListener('dom-ready', () => {
+    webview.openDevTools();
+  });
+}
+// editor reflesh
 editor.on("change", (e) => {
-    // markdown => HTML
-    let text = "<div class='slidePage'>" + md.render(editor.getValue()) + "</div>";
-    container.innerHTML = text;
+    webview.send("TEXT", editor.getValue());
 });
+
+

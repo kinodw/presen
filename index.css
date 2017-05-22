@@ -1,0 +1,31 @@
+/*html, body {
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+}*/
+
+* {
+	cursor: inherit;
+}
+
+.pane {
+	height: :100%;
+}
+
+.pane.preview {
+	background: #202020;
+	border-left:none;
+
+}
+
+#preview {
+	z-index:1;
+	position:absolute;
+	left:0;
+	top:0;
+	right:0;
+	bottom:0;
+
+	background: #fff;
+}

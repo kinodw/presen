@@ -12,13 +12,6 @@ var _createEditor2 = _interopRequireDefault(_createEditor);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// markdown parser initialization
-// page parser  =>  "---"
-var md = require("markdown-it")();
-md.renderer.rules.hr = function (token, idx) {
-    return '</div><div class="slidePage">';
-};
-
 // Editor initialization
 var editor = (0, _createEditor2.default)();
 
@@ -31,11 +24,13 @@ _electron.ipcRenderer.on("SEND_TEXT", function (_e, text) {
     editor.setValue(text);
 });
 
-var container = document.querySelector(".container");
-
-// エディターが更新されたらプレビュー更新
+var webview = document.getElementById('preview');
+if (process.env.DEBUG_GUEST) {
+    webview.addEventListener('dom-ready', function () {
+        webview.openDevTools();
+    });
+}
+// editor reflesh
 editor.on("change", function (e) {
-    // markdown => HTML
-    var text = "<div class='slidePage'>" + md.render(editor.getValue()) + "</div>";
-    container.innerHTML = text;
+    webview.send("TEXT", editor.getValue());
 });

@@ -1,10 +1,10 @@
 "use strict";
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
+var _electron = require("electron");
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var md = require("markdown-it")();
 
 var slide = function slide(text) {
 	_classCallCheck(this, slide);
@@ -12,4 +12,9 @@ var slide = function slide(text) {
 	this.text = text;
 };
 
-exports.default = slide;
+// export default slide;
+
+_electron.ipcRenderer.on("TEXT", function (e, text) {
+	var source = document.querySelector("#markdown");
+	source.innerHTML = md.render(text);
+});

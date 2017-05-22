@@ -67,18 +67,17 @@ function saveAsNewFile() {
 
 
 function exportPDF() {
-    win.window.webContents.send("PRESENTATION");
-    // showExportPDFDialog()
-    // .then((filePath) => {
-    //     win.generatePDF()
-    //     .then( (pdf) => fileManager.writePdf(filePath,pdf))
-    //     .catch( (error) => {
-    //         console.log(error);
-    //     })
-    // })
-    // .catch((error) => {
-    //     console.log(error);
-    // })
+    showExportPDFDialog()
+    .then((filePath) => {
+        win.generatePDF()
+        .then( (pdf) => fileManager.writePdf(filePath,pdf))
+        .catch( (error) => {
+            console.log(error);
+        })
+    })
+    .catch((error) => {
+        console.log(error);
+    })
 
-    // console.log("exportPDF");
+    console.log("exportPDF");
 }

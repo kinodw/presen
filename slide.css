@@ -1,0 +1,12 @@
+
+.slidePage {
+	width:297mm;
+	height:210mm;
+	overflow: hidden;
+	background: white;
+	margin-top:10mm;
+	max-width:100%;
+	max-height:100%;
+	/* 改ページ設定 */
+	page-break-after: always;
+}

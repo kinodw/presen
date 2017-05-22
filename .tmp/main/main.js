@@ -90,18 +90,15 @@ function saveAsNewFile() {
 }
 
 function exportPDF() {
-    win.window.webContents.send("PRESENTATION");
-    // showExportPDFDialog()
-    // .then((filePath) => {
-    //     win.generatePDF()
-    //     .then( (pdf) => fileManager.writePdf(filePath,pdf))
-    //     .catch( (error) => {
-    //         console.log(error);
-    //     })
-    // })
-    // .catch((error) => {
-    //     console.log(error);
-    // })
+    (0, _showExportPDFDialog2.default)().then(function (filePath) {
+        win.generatePDF().then(function (pdf) {
+            return fileManager.writePdf(filePath, pdf);
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }).catch(function (error) {
+        console.log(error);
+    });
 
-    // console.log("exportPDF");
+    console.log("exportPDF");
 }
